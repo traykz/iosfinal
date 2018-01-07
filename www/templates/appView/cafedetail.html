@@ -1,0 +1,132 @@
+<ion-view view-title="Cafes">
+    <div class="text-center positive middle-align" ng-if="msg != ''">
+        {{msg}}
+    </div>
+    
+    <ion-content class="padding-bottom" style="background-color: black;">
+
+    <div class="article-view">
+
+     <div class="min-height max-height" ng-if="cafedetail.image">
+               
+       <img class="full-image" imgloadingsec ng-src="{{cafedetail.image | serverimage}}">
+    
+     </div>
+       
+            
+            
+      
+      <div class="padding-horizontal">  
+      
+      <center><img src="img/{{cafedetail.id}}.png"></center> 
+               <br>
+                <div class="light"><center><small>Califica este café</small></center></div>
+                 <div  style="font-size: 50px">
+                       
+                        <ionic-ratings  ratingsobj='ratingsObject' index='0'></ionic-ratings><br>                
+
+                 </div>
+
+                <div class="light"> <center><small>Rating global</small></center>
+                 <ionic-ratings ratingsobj='ratingsObject2' index='0'></ionic-ratings><br>
+
+              <!--   <i class="icon ion-star"></i><span ng-bind-html="cafedetail.rating"></span> Stars Coffee</center>-->
+
+<!--End Rating-->
+
+<div  ng-click="showComment();"" class="bar bar-calm">
+      
+ <center> <P style="font-size: 15px; text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¿Ya lo Probaste?  Guarda notas de tu catación</small></p>
+
+ </div>
+ <br>
+ <br>
+
+                                          
+<div class="card list" >
+                   
+                    <label class="item item-input item-floating-label" ng-class="allvalidation[0].validation">
+                    <span class="input-label">
+                    <h4>  <i class="icon ion-compose"></i> Reseña para {{cafedetail.nombre}}</h4>
+                    </span><BR>
+                    <input type="text" name="opinion" placeholder="Escribe tu Reseña" ng-model="comentario.opinion">
+                    </label> 
+
+</div>
+<center><button class="button button-energized " ng-click="comentariosubmit(comentario);">Enviar</button></center><br>
+
+<center><div class="badge light">Últimas reseñas  para:<br>{{cafedetail.nombre}}</div></center>
+
+
+<div ng-repeat="opiniones in json | limitTo:10">
+<br>
+<p style="font-family: 'Gotham-light';"><i class="icon ion-chatbox"></i> "{{opiniones.opinion}}" - <small>{{opiniones.creado}}</small></p>
+</div>
+<br>
+
+
+<p ng-bind-html="cafedetail.content"></p>
+                <br>
+
+
+                <h5 class="dark" ng-if="cafedetail.cafevideos && cafedetail.cafevideos != ''">
+
+                <i class="icon ln-file-video positive" style="font-size: 30px;"></i> VideoGaleria</h5>
+                
+                <ion-slide-box on-slide-changed="slideHasChanged($index)">
+                    <ion-slide ng-repeat="images in cafedetail.cafevideos">
+                        <div class="row">
+                            <div class="col col-50" ng-repeat="img in images" ng-click="showVideo(img.url);">
+                                <img src="http://img.youtube.com/vi/{{img.url | url}}/default.jpg" alt="">
+                            </div>
+                        </div>
+                    </ion-slide>
+                </ion-slide-box>
+
+                <h3 class="dark" ng-if="cafedetail.cafeimages && cafedetail.cafeimages != ''">Imágenes</h3>
+
+                <ion-slide-box on-slide-changed="slideHasChanged($index)">
+                    <ion-slide ng-repeat="images in cafedetail.cafeimages">
+                        <div class="row">
+                            <div class="col col-50" ng-repeat="img in images" ng-click="showImage(img.image);"><img ng-src="{{img.image|serverimage}}" imgloadingsec class="full-image"></div>
+                        </div>
+                    </ion-slide>
+                </ion-slide-box>
+
+                <!--<h3 class="dark" ng-if="cafedetail.caferating && cafedetail.caferating !=''">Valoración</h3>-->
+
+                <br>
+            
+
+                <!--<div id="disqus_thread"></div>-->
+
+
+
+            
+
+            </div>
+        </div>
+    
+
+
+    </ion-content>       <br><br><br>
+
+
+
+
+
+
+
+<div class="tabs  tabs-light" >
+  <a  ng-click="puntoslink();" class="positive tab-item icon ion-star "><font style="font-family:Gotham-bold;" size="2.2px">  Mis Puntos</font></a>
+  <a href="#/app/cafes" class="positive tab-item ion-coffee "><font style="font-family:Gotham-bold;" size="2.2px">  Productores</font></a>
+  <a href="#/app/contact" class="positive tab-item ion-earth "><font style="font-family:Gotham-bold;" size="2.2px">  Sucursales</font></a>
+</div>
+
+
+
+
+</ion-view>
+
+
+

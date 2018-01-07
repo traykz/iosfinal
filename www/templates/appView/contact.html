@@ -1,0 +1,58 @@
+<ion-view view-title="Contáctanos">
+    <ion-content>
+        <div class="button-bar">
+            <a class="button button-royal button-outline" ng-class="{'underline':tab=='contactus'}" ng-click="tabchange('contactus',1)">Contáctanos</a>
+            <a class="button button-royal button-outline" ng-class="{'underline':tab=='contactform'}" ng-click="tabchange('contactform',2)">Escríbe un Mensaje</a>
+        </div>
+        <div class="contactus" ng-show="tab=='contactus'">
+            <div class="address">
+                <div class="card">
+                    <div class="list item-text-wrap">
+                        <div class="item item-icon-left">
+                            <i class="icon ln-home3"></i> {{contact.content}}
+                        </div>
+                        <a ng-href="tel:{{contact.text}}" class="item item-icon-left">
+                            <i class="icon ln-phone2"></i> {{contact.text}}
+                        </a>
+                        <a ng-href="mailto:{{contact.type}}" class="item item-icon-left">
+                            <i class="icon ln-envelope"></i> {{contact.type}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="map" ng-bind-html="contact.description|rawHtml">
+            </div>
+        </div>
+        </div>
+        <div class="contactform" ng-show="tab=='contactform'">
+            <div class="list padding smart-form">
+                <label class="item item-input item-floating-label" ng-class="allvalidation[0].validation">
+                    <span class="input-label">Nombre Completo</span>
+                    <input type="text" placeholder="Nombre Completo" ng-model="enquiry.name">
+                </label>
+                <label class="item item-input item-floating-label" ng-class="allvalidation[1].validation">
+                    <span class="input-label">Email</span>
+                    <input type="email" placeholder="Email" ng-model="enquiry.email">
+                </label>
+                <label class="item item-input item-floating-label" ng-class="allvalidation[2].validation">
+                    <span class="input-label">Asunto</span>
+                    <input type="text" placeholder="Asunto" ng-model="enquiry.title">
+                </label>
+                <label class="item item-input item-floating-label" ng-class="allvalidation[3].validation">
+                    <span class="input-label">Mensaje</span>
+                    <textarea placeholder="¿Desas mas información sobre nuestros productos?" ng-model="enquiry.content"></textarea>
+                </label>
+            </div>
+            <div class="padding-horizontal">
+                <button class="button button-block button-royal" ng-click="enquiryform(enquiry);">
+                    Enviar
+                </button>
+            </div>
+        </div>
+    </ion-content>
+<div class="tabs  tabs-light" >
+  <a  href="#/app/profile" class="positive tab-item icon ion-star "><font style="font-family:Gotham-bold;" size="2.2px">  Mis Puntos</font></a>
+  <a href="#/app/cafes" class="positive tab-item ion-coffee "><font style="font-family:Gotham-bold;" size="2.2px">  Productores</font></a>
+  <a href="#/app/contact" class="positive tab-item ion-earth "><font style="font-family:Gotham-bold;" size="2.2px">  Sucursales</font></a>
+</div>
+</ion-view>

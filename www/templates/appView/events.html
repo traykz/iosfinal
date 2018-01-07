@@ -1,0 +1,26 @@
+<ion-view view-title="Eventos MyCoffeeBox">
+    <div class="text-center positive middle-align" ng-if="msg != ''">
+        {{msg}}
+    </div>
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="event in events" class="item-thumbnail-left item-text-wrap" ng-click="geteventdetails(event.id);">
+                <div class="image-adjust img-content" ng-style="{'background-image':'url({{event.image|serverimage}})'}"></div>
+                <h2>{{event.title}}</h2>
+                <span class="icon-space"><i class="icon ln-calendar3"></i></span><span class="font-light">{{event.startdate|date : 'dd MMM, yyyy'}}</span>
+                <br>
+                <span class="icon-space"><i class="icon ln-timer"></i></span><span class="font-light">{{event.starttime|convertto12}}</span>
+                <ion-option-button class="button-positive" ng-click="share(event)">
+                    Share
+                </ion-option-button>
+            </ion-item>
+            <ion-infinite-scroll on-infinite="loadMorePolls()" ng-if="keepscrolling" distance="25%">
+            </ion-infinite-scroll>
+        </ion-list>
+    <br><br><br><br></ion-content>
+<div class="tabs  tabs-light" >
+  <a  ng-click="puntoslink();" class="positive tab-item icon ion-star "><font style="font-family:Gotham-bold;" size="2.2px">  Mis Puntos</font></a>
+  <a href="#/app/cafes" class="positive tab-item ion-coffee "><font style="font-family:Gotham-bold;" size="2.2px">  Productores</font></a>
+  <a href="#/app/contact" class="positive tab-item ion-earth "><font style="font-family:Gotham-bold;" size="2.2px">  Sucursales</font></a>
+</div>
+</ion-view>

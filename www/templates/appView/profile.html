@@ -1,0 +1,89 @@
+<ion-view view-title="Mi Perfil">
+    <ion-content>
+
+        <div class="relative profile-banner" ng-style="user.newcoverimage">
+            <button class="button button-dark button-small pull-right dark-transparent w-full" ng-click="picImageForCover()" ng-if="edit==true;">Editar Imagen</button>
+            <div class="image-adjust" ng-style="user.newimage">
+                <button class="button button-dark button-small dark-transparent w-full" ng-click="picFromGallery()" ng-if="edit==true;">Editar</button>
+            </div>
+            <div class="gradient-hold full">
+                <h3 class="light">{{user.name}}</h3>
+                <button class="button button-rosa button-edit button-round ion-edit" ng-click="changeedit(true)" ng-show="edit==false;"></button>
+                <button class="button button-rosa button-edit button-round ion-close" ng-click="changeedit(false)" ng-show="edit==true;"></button>
+            </div>
+        </div>
+        <div ng-if="edit==false;">
+            <ion-list>
+                <ion-item><span class="icon-space"><i class="icon ln-map-marker"></i></span> {{user.email}}</ion-item>
+                <ion-item><span class="icon-space"><i class="icon ln-phone"></i></span> {{user.contact}}</ion-item>
+                <ion-item><span class="icon-space"><i class="icon ln-map-marker"></i></span> {{user.location}}</ion-item>
+                <ion-item><span class="icon-space"><i class="icon ln-calendar2"></i></span> {{user.dob|date:'MMMM dd, yyyy'}}</ion-item>
+                
+            </ion-list>
+        </div>
+        <div ng-if="edit==true;">
+            <div class="list list-icon">
+                <label class="item item-input">
+                    <span class="input-label"><i class="icon ln-user"></i></span>
+                    <input type="text" placeholder="Name" ng-model="user.name">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label"><i class="icon ln-envelope"></i></span>
+                    <input type="email" placeholder="Email Address" ng-model="user.email">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label"><i class="icon ln-phone"></i></span>
+                    <input type="tel" placeholder="Numero Telefónico." ng-model="user.contact">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label"><i class="icon ln-map-marker"></i></span>
+                    <input type="text" placeholder="Ciudad, Estado." ng-model="user.location">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label"><i class="icon ln-calendar2"></i></span>
+                    <input type="date" placeholder="Birth Date" ng-model="user.dob">
+                </label>
+            </div>
+            <div class="padding-horizontal padding-bottom">
+                <button class="button button-rosa button-block" ng-click="saveProfile();">Guardar</button>
+            </div>
+            <div class="list list-icon">
+                <div class="item item-divider">Cambiar Password</div>
+                <label class="item item-input">
+                    <span class="input-label"><i class="icon ln-user"></i></span>
+                    <input type="password" placeholder="Viejo password" ng-model="password.oldpassword" ng-class="allvalidation[0].validation">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label"><i class="icon ln-envelope"></i></span>
+                    <input type="password" placeholder="Nuevo password" ng-model="password.newpassword" ng-class="allvalidation[1].validation">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label"><i class="icon ln-phone"></i></span>
+                    <input type="password" placeholder="Confirmar password" ng-model="password.confirmpassword" ng-class="allvalidation[2].validation">
+                </label>
+            </div>
+            <div class="padding-horizontal">
+                <button class="button button-rosa button-block" ng-click="changePassword();">Cambiar password</button>
+            </div>
+        </div>
+        </ion-item>
+
+
+                <ion-item><span class="icon-space"><i class="icon ln-teacup"></i></span><small>Cafés Gratis Disponible </small><br><br> <center><strong>  {{userpromo.CAFE_DISPONIBLE}}</strong></center></ion-item>
+                <ion-item><span class="icon-space"><i class="ion-ios-star-outline"></i></span><small>Puntos Acumulados para tu siguiente café </small><strong> <br><br><center>{{userpromo.PUNTOS_SIG_CAFE}}</strong></center></ion-item>
+                <ion-item><span class="icon-space"><i class="icon ln-calendar2"></i></span><small>Fecha de tu última Compra </small> <br><br> <strong> <Center>{{userpromo.timestamp}}</Center></strong></ion-item>
+                <br>
+                <br>
+                <br>
+
+                <ion-list>
+<br><br><br><br><br>
+
+    </ion-content>
+
+<div class="tabs  tabs-light" >
+  <a  ng-click="puntoslink();" class="positive tab-item icon ion-star "><font style="font-family:Gotham-bold;" size="2.2px">  Mis Puntos</font></a>
+  <a href="#/app/cafes" class="positive tab-item ion-coffee "><font style="font-family:Gotham-bold;" size="2.2px">  Productores</font></a>
+  <a href="#/app/contact" class="positive tab-item ion-earth "><font style="font-family:Gotham-bold;" size="2.2px">  Sucursales</font></a>
+</div>
+</ion-view>

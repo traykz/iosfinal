@@ -1,0 +1,72 @@
+<ion-view view-title="Nuestros Cafés">
+    <div class="text-center positive middle-align" ng-if="msg != ''">
+        {{msg}}
+    </div>
+
+    <ion-content ng-style="{'background-image':'url(img/madera.jpg)'}">
+
+
+    <div class="padding card" ng-repeat="cafe in cafes"  ng-click="getcafedetails(cafe.id);">
+           
+
+            <ion-item class="item-avatar item-icon-right">
+                <div class="image-adjust img-blog" ng-style="{'background-image':'url(img/NUEVO-LOGO-MCB.png)'}">
+                </div>
+                <h2>{{cafe.nombre}}</h2><p>{{cafe.region}} | <span style="cursor:pointer" class="icon-space" onclick="window.open('http://mycoffeebox.com/carrito/', '_blank', 'location=no')" ><i class="icon ion-ios-cart-outline"></i></span></p>
+              
+
+            </ion-item>
+
+            
+
+              <div class="full-image item-body" ng-click="getcafedetails(cafe.id);">
+             
+              <img width="100%"  ng-src="{{cafe.image|serverimage}}">
+ 
+              </div>
+
+
+
+
+              <div class="item item-footer">
+                <center>
+              <span ng-bind-html="cafe.catacion| cut:true:57:'. . .'| rawHtml"><h4>{{cafe.catacion}}</h4></span>
+               </center>
+
+              </div>
+            
+      </div>
+
+   <ion-infinite-scroll on-infinite="loadMorePolls()" ng-if="keepscrolling" distance="25%"></ion-infinite-scroll>
+
+       
+
+<!--<ion-list>
+<ion-item ng-repeat="cafe in cafes" class="item-thumbnail-left item-text-wrap" ng-click="getcafedetails(cafe.id);">
+                
+                <div class="image-adjust img-content" ng-style="{'background-image':'url({{cafe.image|serverimage}})'}"></div>
+<center><font style="font-family:Gotham-light; color: #606060;" size="4px">{{cafe.nombre}}</font></center>
+<img alt="">
+<ion-option-button class="button-positive" onclick="window.open('http://mycoffeebox.com/carrito/', '_blank', 'location=no')" >
+                    <span class="icon-space"><i class="icon ion-ios-cart-outline"></i></span>
+               </ion-option-button>
+
+               
+
+            </ion-item>
+           
+        </ion-list>-->
+
+       <br><br><br><br>
+    </ion-content>
+<div class="tabs  tabs-light" >
+  <a  ng-click="puntoslink();" class="positive tab-item icon ion-star "><font style="font-family:Gotham-bold;" size="2.2px">  Mis Puntos</font></a>
+  <a href="#/app/cafes" class="positive tab-item ion-coffee "><font style="font-family:Gotham-bold;" size="2.2px">  Productores</font></a>
+  <a href="#/app/contact" class="positive tab-item ion-earth "><font style="font-family:Gotham-bold;" size="2.2px">  Sucursales</font></a>
+</div>
+<!--<div class="tabs  tabs-positive">
+  <a  href="#/app/home" class="tab-item icon ion-star ">  Mis Puntos</a>
+  <a href="#/app/cafes" class="tab-item ion-coffee ">  Productores</a>
+  <a href="#/app/contact" class="tab-item ion-earth ">  Sucursales</a>
+</div>-->
+</ion-view>

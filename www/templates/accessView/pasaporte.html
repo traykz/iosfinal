@@ -1,0 +1,66 @@
+<ion-view class="login-bg">
+    <ion-content>
+       <!-- <div class="login-logo light" ng-click="resize();">
+            <img src="img/mycoffee.png">
+             <br><center><font size="2px" color="white">Registrate y gana cafés.</center></font>
+            <!--MyCoffeeBox<span class="bold positive">App</span>-->
+        <!--</div>--><br>
+        
+        <center><img ng-src="img/appcajita.png" class="f" width="65%"></center>
+        <center><span class="bold light">MYCOFFEEBOX.COM</span></center>
+        <div class="login-tab">
+            <div class="button-bar">
+                <a class="button button-royal button-outline" ng-class="{'underline':tab=='signin'}" ng-click="tabchange('signin',1)"><span class="light">INGRESAR</span></a>
+                <a class="button button-royal button-outline" ng-class="{'underline':tab=='signup'}" ng-click="tabchange('signup',2)"><span class="light">REGISTRATE</span></a>
+            </div>
+            <div class="login" ng-show="tab=='signin'">
+                <div class="list" >
+                    <label class="item item-input item-floating-label" ng-class="allvalidation[0].validation"><span class="input-label">Email</span>
+                        <i class="icon ln-user"></i>
+                        <input type="email" placeholder="Email" ng-model="signin.username">
+                    </label>
+                    <label class="item item-input item-floating-label" ng-class="allvalidation[1].validation">
+                        <span class="input-label">Password</span>
+                        <i class="icon ln-lock"></i>
+                        <input type="password" placeholder="Password" ng-model="signin.password">
+                    </label><br>
+                     <center><button class="button button-light " ng-click="signinsubmit(signin);">
+                        INGRESAR
+                    </button></center><br>
+                      <center><small><a class="light" ng-click="forgotpass()" ng-show="logindata.email"> Olvidaste tu password?</a></small></center>
+                </div>
+              
+            </div>
+        
+            <div class="login" ng-show="tab=='signup'">
+                <div class="list">
+                    <label class="item item-input item-floating-label" ng-class="allvalidation[0].validation">
+                        <span class="input-label">Nombre</span>
+                        <i class="icon ln-user"></i>
+                        <input type="text" placeholder="Tu Nombre" ng-model="signup.username">
+                    </label>
+                    <label class="item item-input item-floating-label" ng-class="allvalidation[1].validation">
+                        <span class="input-label">Email</span>
+                        <i class="icon ln-envelope"></i>
+                        <input type="email" placeholder="Email" ng-model="signup.email">
+                    </label>
+                    <label class="item item-input item-floating-label" ng-class="allvalidation[2].validation">
+                        <span class="input-label">Cumpleaños</span>
+                        <i class="icon ln-gift"></i>
+                        <input type="text" onfocus="(this.type='date')" placeholder="Cumpleaños" ng-model="signup.dob">
+                    </label>
+                    <label class="item item-input item-floating-label" ng-class="allvalidation[3].validation">
+                        <span class="input-label">Password</span>
+                        <i class="icon ln-lock"></i>
+                        <input type="password" placeholder="Password" ng-model="signup.password">
+                    </label>
+                </div>
+                <div class="login-btn footer">
+                   <center> <button class="button  button-royal" ng-click="signupsubmit(signup);">
+                         REGISTRARME
+                    </button></center>
+                </div>
+            </div>
+        </div>
+    <br><br><br><br></ion-content>
+</ion-view>

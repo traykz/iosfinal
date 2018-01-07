@@ -1,0 +1,38 @@
+
+
+<ion-view class="login-bg2" view-title="Inicio">
+    <ion-content>
+        <!--<ion-slide-box on-slide-changed="slideHasChanged($index)">
+            <ion-slide ng-repeat="slide in slides track by $index">-->
+            <ion-slide-box >
+            <ion-slide>
+                 <div class="light" style="padding-left: 30px; padding-right: 30px; font-color:#fff; font-family: Gotham-light; font-size: 30px;"><br><br>
+              <center>
+              <img ng-src="img/appcajita.png" class="f" width="70%">           
+              ¡BIENVENIDOS!<br><br>
+
+          
+
+    <font size="1px"><i class="ion-android-arrow-dropleft"></i>  Desliza a la izquierda</font><br><br><br><br></center>
+                 </div>
+            </ion-slide>
+            <ion-slide>
+                 <div class="light" style="padding-left: 20px; padding-right: 30px; font-color:#fff; font-family: Gotham-light; font-size: 15px;"><br><br><center style="text-align: center; "><img src="img/iconregistro.png" width="50%"><br>¡Regístrate y beneficiate con cafés gratis!</center></div><br>
+                 <center><a class="button button-royal"  href="#/access/pasaporte"><span class="light">Regístrate y logueate aquí</span></a><br><br><br><br></center>
+            </ion-slide>
+              <ion-slide>
+                 <div class="light" style="padding-left: 20px; padding-right: 30px; font-color:#fff; font-family: Gotham-light; font-size: 15px;"><br><br><font size="4px"><i class="icon ion-trophy"></i> Instrucciones </font><br>Por cada compra realizada, recuerda proporcionar el email con el que te registraste a nuestros operador. Cada vez que acumules 6 compras, te regalaremos 1 bebida sin costo alguno.</div><br>
+                 <div style=" padding-left: 20px; padding-right: 30px; text-align: left; font-family: Gotham-light; font-size: 15px;"  href="#/access/pasaporte"><span class="light">Podrás visualizar tus puntos y cafés gratis en la barra de menú dando click en la opción  </span><br><br><center><button class="button-calm button-small"><i class="icon ion-android-person" style="text-align: center;" ></i>  Mi perfil</button><br><br><br><br></center></div><br>
+            </ion-slide>
+        </ion-slide-box>
+         
+         
+               
+               <div class="padding" ng-bind-html="content.content"></div>
+    </ion-content>
+<div class="tabs  tabs-light" >
+  <a ng-click="puntoslink();" class="positive tab-item icon ion-star "><font style="font-family:Gotham-bold;" size="2.2px">  Mis Puntos</font></a>
+  <a href="#/app/cafes" class="positive tab-item ion-coffee "><font style="font-family:Gotham-bold;" size="2.2px">  Productores</font></a>
+  <a href="#/app/contact" class="positive tab-item ion-earth "><font style="font-family:Gotham-bold;" size="2.2px">  Sucursales</font></a>
+</div>
+</ion-view>
