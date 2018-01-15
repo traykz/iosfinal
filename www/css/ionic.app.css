@@ -1,30 +1,16 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i|Poiret+One|Boogaloo');
-
-
-
-
 @import url('../lib/compass/css3');
 
 
 
-/* #pagegradient {
-  background-image:
-        -webkit-gradient(
-            radial, 
-            50% -50, 
-            300, 
-            50% 0, 
-            0, 
-            from(rgba(230, 237, 241, 0)), 
-            to(rgba(230, 237, 241, 0.8)));
-    
-  height:100%;
-  left:0px;
-  position:absolute;
-  top:0;
-  width: 600px;
-} */
+@font-face { font-family: GOTHAM-BOLD; src: url("../fonts/GOTHAM-BOLD.ttf") format('truetype');}
+@font-face { font-family: GOTHAM-LIGHT; src: url("../fonts/GOTHAM-LIGHT.ttf") format('truetype');}
+@font-face { font-family: GOTHAM-MEDIUM; src: url("../fonts/GOTHAM-MEDIUM.ttf") format('truetype'); }
+@font-face { font-family: Gotham-Book; src: url("../fonts/Gotham-Book.ttf") format('truetype');}
+
+
+
 
 .boton {
     position: static;

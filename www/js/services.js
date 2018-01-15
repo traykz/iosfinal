@@ -45,8 +45,8 @@ angular.module('starter.services', [])
 					data: {
 						'username': signup.username,
 						'email': signup.email,
-						'password': signup.password,
-						'dob': signup.dob
+						'password': signup.password
+						
 					}
 				}).success(callback).error(err);
 			},

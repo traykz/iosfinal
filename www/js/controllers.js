@@ -580,9 +580,6 @@ addanalytics("flexible login page");
 			field: $scope.signup.email,
 			validation: ""
         }, {
-			field: $scope.signup.dob,
-			validation: ""
-        }, {
 			field: $scope.signup.password,
 			validation: ""
         }];
